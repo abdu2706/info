@@ -41,16 +41,20 @@
                 (resolve)=>setTimeout(resolve, ms)
             );
         }
-        function start(){
+        async function start(){
             const box = document.getElementById("box");
             // repeate the following forever
             // add class around to box
             // sleep 3 seconds
             // remove class around
             // sleep 20ms
-
+            while(true){
+                box.classList.add("around");
+                await sleep(3000)
+                box.classList.remove("around");
+                await sleep(20)
+            }
         }
-        
 
     </script>
 </body>
